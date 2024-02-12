@@ -1,0 +1,8 @@
+*secret*
+homelab/hass/.storage/*
+homelab/hass/.cloud/*
+homelab/hass/custom_components/*
+*.db*
+*log*
+homelab/zigbee2mqtt/data/state.json
+homelab/zigbee2mqtt/data/coordinator_backup.json
