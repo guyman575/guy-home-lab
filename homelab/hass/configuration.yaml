@@ -9,3 +9,9 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+light:
+  - platform: decora_wifi
+    username: rgcassetta@gmail.com 
+    password: !secret leviton_password
+    

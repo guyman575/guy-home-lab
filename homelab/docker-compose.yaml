@@ -5,6 +5,7 @@ services:
     volumes:
       - /home/rgcassetta/Projects/guy-home-lab/homelab/hass:/config
       - /run/dbus:/run/dbus:ro
+      - ./secrets/secrets.yaml:/config/secrets.yaml
     restart: unless-stopped
     network_mode: host
     privileged: true
