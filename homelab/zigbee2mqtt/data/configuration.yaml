@@ -1,0 +1,30 @@
+permit_join: true
+mqtt:
+  server: mqtt://192.168.86.250:1883
+  serial:
+    port: /dev/ttyACM0
+  user: guy
+  password: '!secrets.yaml mosquitto_password'
+frontend: true
+advanced:
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
+device_options:
+  legacy: false
+devices:
+  '0xb0ce18140016f1cd':
+    friendly_name: sengled_bulb_2
+  '0xb0ce18140016f36a':
+    friendly_name: sengled_bulb_3
+  '0xb0ce18140016f6f3':
+    friendly_name: sengled_bulb_1
+  '0x0017880103897a83':
+    friendly_name: hue_color_lamp_1
+  '0x3425b4fffe3672ce':
+    friendly_name: officepanel
+  '0xf0d1b80000073200':
+    friendly_name: office_bed_lights
+homeassistant:
+  legacy_entity_attributes: true
+  legacy_triggers: true
