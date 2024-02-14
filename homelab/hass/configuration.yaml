@@ -15,3 +15,48 @@ light:
     username: rgcassetta@gmail.com 
     password: !secret leviton_password
     
+# mqtt:
+#   - switch:
+#       name: "shellyplus1-b8d61a8ab238-mqtt"
+#       unique_id: "shellyplus1-b8d61a8ab238-mqtt"
+#       state_topic: shellyplus1-b8d61a8ab238/status/switch:0
+#       value_template: "{{ value_json.output }}"
+#       state_on: true
+#       state_off: false
+#       command_topic: shellyplus1-b8d61a8ab238/rpc
+#       payload_on: '{"id":1, "src": "homeassistant/shellies/shellyplus1pm-XXXX", "method": "Switch.Set", "params":{"id":0,"on":true}}'
+#       payload_off: '{"id":1, "src": "homeassistant/shellies/shellyplus1pm-XXXX", "method": "Switch.Set", "params":{"id":0,"on":false}}'
+#       retain: false
+#   - switch:
+#       name: "shellyplus1pm-b8d61a88886c-mqtt"
+#       unique_id: "shellyplus1pm-b8d61a88886c-mqtt"
+#       state_topic: shellyplus1pm-b8d61a88886c/status/switch:0
+#       value_template: "{{ value_json.output }}"
+#       state_on: true
+#       state_off: false
+#       command_topic: shellyplus1pm-b8d61a88886c/rpc
+#       payload_on: '{"id":1, "src": "homeassistant/shellies/shellyplus1pm-XXXX", "method": "Switch.Set", "params":{"id":0,"on":true}}'
+#       payload_off: '{"id":1, "src": "homeassistant/shellies/shellyplus1pm-XXXX", "method": "Switch.Set", "params":{"id":0,"on":false}}'
+#       retain: false
+#   - switch:
+#       name: "shelly1pmminig3-ecda3bc13468-mqtt"
+#       unique_id: "shelly1pmminig3-ecda3bc13468-mqtt"
+#       state_topic: shelly1pmminig3-ecda3bc13468/status/switch:0
+#       value_template: "{{ value_json.output }}"
+#       state_on: true
+#       state_off: false
+#       command_topic: shelly1pmminig3-ecda3bc13468/rpc
+#       payload_on: '{"id":1, "src": "homeassistant/shellies/shellyplus1pm-XXXX", "method": "Switch.Set", "params":{"id":0,"on":true}}'
+#       payload_off: '{"id":1, "src": "homeassistant/shellies/shellyplus1pm-XXXX", "method": "Switch.Set", "params":{"id":0,"on":false}}'
+#       retain: false
+#   - switch:
+#       name: "shelly1pmminig3-84fce63882b8-mqtt"
+#       unique_id: "shelly1pmminig3-84fce63882b8-mqtt"
+#       state_topic: shelly1pmminig3-84fce63882b8/status/switch:0
+#       value_template: "{{ value_json.output }}"
+#       state_on: true
+#       state_off: false
+#       command_topic: shelly1pmminig3-84fce63882b8/rpc
+#       payload_on: '{"id":1, "src": "homeassistant/shellies/shellyplus1pm-XXXX", "method": "Switch.Set", "params":{"id":0,"on":true}}'
+#       payload_off: '{"id":1, "src": "homeassistant/shellies/shellyplus1pm-XXXX", "method": "Switch.Set", "params":{"id":0,"on":false}}'
+#       retain: false

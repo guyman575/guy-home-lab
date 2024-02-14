@@ -25,6 +25,14 @@ devices:
     friendly_name: officepanel
   '0xf0d1b80000073200':
     friendly_name: office_bed_lights
+  '0x001788010dab2c99':
+    friendly_name: hue_color_lamp_2
 homeassistant:
   legacy_entity_attributes: true
   legacy_triggers: true
+groups:
+  '1':
+    friendly_name: office_lamp
+    devices:
+      - 0x0017880103897a83/11
+      - 0x001788010dab2c99/11
