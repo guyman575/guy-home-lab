@@ -27,6 +27,12 @@ devices:
     friendly_name: office_bed_lights
   '0x001788010dab2c99':
     friendly_name: hue_color_lamp_2
+  '0x00158d00094d827f':
+    friendly_name: pantry_door_sensor_1
+  '0x282c02bfffebd5bf':
+    friendly_name: pantry_lights
+  '0xf082c0fffeb1f5a6':
+    friendly_name: living_room_scene_switch
 homeassistant:
   legacy_entity_attributes: true
   legacy_triggers: true
