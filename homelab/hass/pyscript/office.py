@@ -15,6 +15,12 @@ def overhead_lights(light_rgbs=None, light_temp=None, brightness_pct=100):
         light.turn_on(entity_id='light.sengled_bulb_2', brightness_pct=brightness_pct, color_temp=light_temp)
         light.turn_on(entity_id='light.sengled_bulb_3', brightness_pct=brightness_pct, color_temp=light_temp)
 
+def overhead_lights_single_color(light_rgb=None, light_temp=None, brightness_pct=100):
+    if light_rgb:
+        light.turn_on(entity_id='light.office_overhead', brightness_pct=brightness_pct, rgb_color=light_rgb)
+    elif light_temp:
+        light.turn_on(entity_id='light.office_overhead', brightness_pct=brightness_pct, color_temp=light_temp)
+
 def desk_lights(light_rgbs=None, light_temp=None, brightness_pct=100):
     if light_rgbs:
         for i in range(len(DESK_LIGHTS)):
@@ -59,6 +65,20 @@ def ge_light(color,brightness=50):
 def test_service(action=None, id=None):
     shoe_shelf_rgbw([[0,0,255,0],[0,0,255,0],[0,0,255,0],[0,0,255,0],[0,0,255,0],[0,0,255,0]],50)
 
+
+@service
+@mqtt_trigger('zigbee2mqtt/officepanel/action', 'payload=="2_double"')
+def miami_nights(action=None, id=None):
+    light.turn_on(entity_id='light.office_lamp', brightness_pct=100, rgb_color=[100,255,255])
+    light.turn_on(entity_id='light.office_bed_lights', brightness_pct=100, rgb_color=[255,80,205])
+    overhead_lights_single_color(light_rgb=[100,255,255],brightness_pct=100)
+    desk_lights_rgbw(desk_rgbw_values=[[100,255,255],[255,80,205],[255,80,205]],brightness_pct=100)
+    light.turn_on(entity_id='light.daft_punk_sign')
+    light.turn_on(entity_id='light.cassetta_sign',brightness_pct=10)
+    ge_light('magenta')
+    shoe_shelf_rgbw(brightness_pct=100,shelf_rbgw_values=[[100,255,255],[255,80,205],[100,255,255],[100,255,255],[255,80,205],[100,255,255]])
+
+
 @service
 @mqtt_trigger('zigbee2mqtt/officepanel/action', 'payload=="1_single"')
 def synthboy_1(action=None, id=None):
@@ -94,7 +114,7 @@ def normie_lights_1(action=None, id=None):
     light.turn_off(entity_id='light.cassetta_sign')
     light.turn_off(entity_id='light.daft_punk_sign')
     google_assistant_sdk.send_text_command(command=f'set the ge light brightness to 0')
-    overhead_lights(light_temp=300,brightness_pct=100)
+    overhead_lights_single_color(light_temp=300,brightness_pct=100)
     desk_lights_rgbw_single(desk_rgbw=[242,110,0,255],brightness_pct=100)
     light.turn_on(entity_id='light.office_lamp', brightness_pct=100, color_temp=300)
     shoe_shelf_rgbw_single([61,29,0,255],brightness_pct=100)
@@ -104,7 +124,7 @@ def normie_lights_1(action=None, id=None):
 def redlight(action=None, id=None):
     light.turn_on(entity_id='light.office_lamp', brightness_pct=40, rgb_color=[255,0,0])
     light.turn_on(entity_id='light.office_bed_lights', brightness_pct=100, rgb_color=[255,0,0])
-    overhead_lights(light_rgbs=[[255,0,0],[255,0,0],[255,0,0]],brightness_pct=100)
+    overhead_lights_single_color(light_rgb=[255,0,0],brightness_pct=100)
     desk_lights_rgbw_single(desk_rgbw=[255,0,0,0],brightness_pct=100)
     light.turn_off(entity_id='light.daft_punk_sign')
     light.turn_off(entity_id='light.cassetta_sign')
@@ -117,7 +137,7 @@ def redlight(action=None, id=None):
 def synthboy_2(action=None, id=None):
     light.turn_on(entity_id='light.office_lamp', brightness_pct=100, rgb_color=[30,255,30])
     light.turn_on(entity_id='light.office_bed_lights', brightness_pct=100, rgb_color=[30,255,0])
-    overhead_lights(light_rgbs=[[255,130,30],[255,130,30],[255,130,30]],brightness_pct=100)
+    overhead_lights_single_color(light_rgb=[255,130,30],brightness_pct=100)
     desk_lights_rgbw(desk_rgbw_values=[[255,130,30],[30,255,30],[255,0,255]],brightness_pct=100)
     light.turn_on(entity_id='light.daft_punk_sign')
     light.turn_on(entity_id='light.cassetta_sign',brightness_pct=10)

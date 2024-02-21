@@ -42,6 +42,18 @@ services:
     environment:  
       - TZ=Europe/Amsterdam  
     image: koenkk/zigbee2mqtt
-
     depends_on:
         - mosquitto
+  mqtt2kasa:
+    container_name: mqtt2kasa
+    build: mqtt2kasa-copy/
+    # restart: unless-stopped
+    volumes:
+      - ./mqtt2kasa-copy:/usr/src/app
+    environment:  
+      - PYTHONPATH=/usr/src/app
+    command: python3 mqtt2kasa/main.py ./data/config.yaml
+    depends_on:
+        - mosquitto
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t

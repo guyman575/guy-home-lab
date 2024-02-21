@@ -4,5 +4,8 @@ homelab/hass/.cloud/*
 homelab/hass/custom_components/*
 *.db*
 *log*
+*__pycache__*
 homelab/zigbee2mqtt/data/state.json
 homelab/zigbee2mqtt/data/coordinator_backup.json
+homelab/mqtt2kasa-copy/data/*
+!homelab/mqtt2kas-copy/mqtt2kasa/log.py

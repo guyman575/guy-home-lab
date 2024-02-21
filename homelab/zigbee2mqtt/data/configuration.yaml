@@ -15,18 +15,46 @@ device_options:
 devices:
   '0xb0ce18140016f1cd':
     friendly_name: sengled_bulb_2
+    homeassistant: {}
+    legacy: false
+    optimistic: true
+    qos: 1
   '0xb0ce18140016f36a':
     friendly_name: sengled_bulb_3
+    homeassistant: {}
+    legacy: false
+    optimistic: true
+    qos: 1
   '0xb0ce18140016f6f3':
     friendly_name: sengled_bulb_1
+    homeassistant: {}
+    legacy: false
+    optimistic: true
+    qos: 1
   '0x0017880103897a83':
     friendly_name: hue_color_lamp_1
+    homeassistant: {}
+    legacy: false
+    optimistic: true
+    qos: 1
   '0x3425b4fffe3672ce':
     friendly_name: officepanel
+    homeassistant: {}
+    legacy: false
+    optimistic: true
+    qos: 1
   '0xf0d1b80000073200':
     friendly_name: office_bed_lights
+    homeassistant: {}
+    legacy: false
+    optimistic: true
+    qos: 1
   '0x001788010dab2c99':
     friendly_name: hue_color_lamp_2
+    homeassistant: {}
+    legacy: false
+    optimistic: true
+    qos: 1
   '0x00158d00094d827f':
     friendly_name: pantry_door_sensor_1
   '0x282c02bfffebd5bf':
@@ -42,3 +70,9 @@ groups:
     devices:
       - 0x0017880103897a83/11
       - 0x001788010dab2c99/11
+  '2':
+    friendly_name: office_overhead
+    devices:
+      - 0xb0ce18140016f6f3/1
+      - 0xb0ce18140016f1cd/1
+      - 0xb0ce18140016f36a/1
