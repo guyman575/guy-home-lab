@@ -47,7 +47,7 @@ services:
   mqtt2kasa:
     container_name: mqtt2kasa
     build: mqtt2kasa-copy/
-    # restart: unless-stopped
+    restart: unless-stopped
     volumes:
       - ./mqtt2kasa-copy:/usr/src/app
     environment:  
@@ -55,5 +55,3 @@ services:
     command: python3 mqtt2kasa/main.py ./data/config.yaml
     depends_on:
         - mosquitto
-    stdin_open: true # docker run -i
-    tty: true        # docker run -t
